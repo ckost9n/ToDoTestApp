@@ -74,7 +74,17 @@ extension TasksTableViewController {
         var noteTextField: UITextField!
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-            guard let text = taskTextfield.text, !text.isEmpty else { return }
+            guard let newTask = taskTextfield.text, !newTask.isEmpty else { return }
+            
+            let task = Task()
+            task.name = newTask
+            
+            if let note = noteTextField.text, !note.isEmpty {
+                task.note = note
+            }
+            
+            StorageManager.saveTask(self.currentTasksList, task: task)
+            self.filteringTasks()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)

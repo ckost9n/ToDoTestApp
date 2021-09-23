@@ -19,6 +19,12 @@ class TasksListTableViewController: UITableViewController {
         
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
         
     }
@@ -68,7 +74,16 @@ extension TasksListTableViewController {
         var alertTextField: UITextField!
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-            guard let text = alertTextField.text, !text.isEmpty else { return }
+            guard let newList = alertTextField.text, !newList.isEmpty else { return }
+            
+            let tasksList = TasksList()
+            tasksList.name = newList
+            
+            StorageManager.saveTasksList(tasksList)
+            self.tableView.insertRows(at: [IndexPath (
+                row: self.tasksLists.count - 1, section: 0)], with: .automatic
+            )
+            
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)

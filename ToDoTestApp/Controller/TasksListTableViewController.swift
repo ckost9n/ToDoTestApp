@@ -6,32 +6,41 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TasksListTableViewController: UITableViewController {
+    
+    private var tasksLists: Results<TasksList>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tasksLists = realm.objects(TasksList.self)
+        
 
     }
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
-        alertForAddAndUpdateList()
+        
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        alertForAddAndUpdateList()
     }
     
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return tasksLists.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tasksListCell", for: indexPath)
 
-        // Configure the cell...
+        let tasksList = tasksLists[indexPath.row]
+        cell.textLabel?.text = tasksList.name
+        cell.detailTextLabel?.text = "\(tasksList.tasks.count)"
 
         return cell
     }

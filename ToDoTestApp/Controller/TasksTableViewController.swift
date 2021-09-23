@@ -18,7 +18,7 @@ class TasksTableViewController: UITableViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-//        alertForAddAndUpdateList()
+        alertForAddAndUpdateList()
     }
     
     

@@ -14,6 +14,7 @@
 		3C23698326FB6C980050BF3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C23698126FB6C980050BF3C /* LaunchScreen.storyboard */; };
 		3C23699026FB7D440050BF3C /* TasksListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23698F26FB7D440050BF3C /* TasksListTableViewController.swift */; };
 		3C23699226FB7D4F0050BF3C /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23699126FB7D4F0050BF3C /* TasksTableViewController.swift */; };
+		3C23699926FC68D10050BF3C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23699826FC68D10050BF3C /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3C23698426FB6C980050BF3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C23698F26FB7D440050BF3C /* TasksListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListTableViewController.swift; sourceTree = "<group>"; };
 		3C23699126FB7D4F0050BF3C /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		3C23699826FC68D10050BF3C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		3C23698A26FB7C000050BF3C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3C23699826FC68D10050BF3C /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +129,8 @@
 			dependencies = (
 			);
 			name = ToDoTestApp;
+			packageProductDependencies = (
+			);
 			productName = ToDoTestApp;
 			productReference = 3C23697326FB6C920050BF3C /* ToDoTestApp.app */;
 			productType = "com.apple.product-type.application";
@@ -154,6 +159,8 @@
 				Base,
 			);
 			mainGroup = 3C23696A26FB6C920050BF3C;
+			packageReferences = (
+			);
 			productRefGroup = 3C23697426FB6C920050BF3C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,6 +190,7 @@
 			files = (
 				3C23699226FB7D4F0050BF3C /* TasksTableViewController.swift in Sources */,
 				3C23697726FB6C920050BF3C /* AppDelegate.swift in Sources */,
+				3C23699926FC68D10050BF3C /* Task.swift in Sources */,
 				3C23699026FB7D440050BF3C /* TasksListTableViewController.swift in Sources */,
 				3C23697926FB6C920050BF3C /* SceneDelegate.swift in Sources */,
 			);

@@ -18,6 +18,7 @@ class TasksTableViewController: UITableViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+//        alertForAddAndUpdateList()
     }
     
     
@@ -42,18 +43,38 @@ class TasksTableViewController: UITableViewController {
 
         return cell
     }
+
+}
+
+extension TasksTableViewController {
     
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func alertForAddAndUpdateList() {
+        
+        let alert = UIAlertController(title: "New Task", message: "Please insert task value", preferredStyle: .alert)
+        var taskTextfield: UITextField!
+        var noteTextField: UITextField!
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+            guard let text = taskTextfield.text, !text.isEmpty else { return }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        alert.addTextField { textField in
+            taskTextfield = textField
+            taskTextfield.placeholder = "New Task"
+        }
+        
+        alert.addTextField { textField in
+            noteTextField = textField
+            noteTextField.placeholder = "Note"
+        }
+        
+        present(alert, animated: true)
+        
     }
-    */
-
+    
 }

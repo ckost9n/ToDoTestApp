@@ -8,10 +8,12 @@
 import UIKit
 
 class TasksTableViewController: UITableViewController {
+    
+    var currentTasksList: TasksList!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = currentTasksList.name
         
     }
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {

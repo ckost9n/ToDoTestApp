@@ -44,7 +44,18 @@ class TasksListTableViewController: UITableViewController {
 
         return cell
     }
+    
+    
+    // MARK: - Navigation
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let taskList = tasksLists[indexPath.row]
+            let tasksVC = segue.destination as! TasksTableViewController
+            tasksVC.currentTasksList = taskList
+        }
+    }
+    
 }
 
 // MARK: - Alert Add Task

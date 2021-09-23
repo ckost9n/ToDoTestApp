@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tasks List Table View Controller-->
+        <!--Tasks List-->
         <scene sceneID="rMr-5j-veI">
             <objects>
                 <tableViewController id="vkv-dO-pTN" customClass="TasksListTableViewController" customModule="ToDoTestApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                             <outlet property="delegate" destination="vkv-dO-pTN" id="PxF-1k-hje"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="UDi-PT-5wM">
+                    <navigationItem key="navigationItem" title="Tasks List" id="UDi-PT-5wM">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ZhO-KQ-6gg">
                             <connections>
                                 <action selector="editButtonPressed:" destination="vkv-dO-pTN" id="U3s-EW-GWl"/>

@@ -51,6 +51,29 @@ class TasksListTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let currentList = tasksLists[indexPath.row]
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+            StorageManager.deleteList(currentList)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        deleteAction.backgroundColor = .red
+        
+        let editAction = UIContextualAction(style: .normal, title: "Edit") {_,_,_ in
+            self.alertForAddAndUpdateList()
+        }
+        
+        let deleteSwipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        return deleteSwipeAction
+    }
+    
+    
+    
     
     // MARK: - Navigation
 
@@ -68,7 +91,10 @@ class TasksListTableViewController: UITableViewController {
 
 extension TasksListTableViewController {
     
-    private func alertForAddAndUpdateList() {
+    private func alertForAddAndUpdateList(_ listName: TasksList? = nil) {
+        
+//        var title = "New List"
+//        var doneButton = "Save"
         
         let alert = UIAlertController(title: "New List", message: "Please insert new value", preferredStyle: .alert)
         var alertTextField: UITextField!

@@ -31,7 +31,12 @@ class StorageManager {
         try! realm.write {
             tasksList.name = newListName
         }
-        
+    }
+    
+    static func makeAllDone(_ tasksList: TasksList) {
+        try! realm.write {
+            tasksList.tasks.setValue(true, forKey: "isComplete")
+        }
     }
     
     // MARK: - Tasks Method
@@ -39,6 +44,27 @@ class StorageManager {
     static func saveTask(_ tasksList: TasksList, task: Task) {
         try! realm.write {
             tasksList.tasks.append(task)
+        }
+    }
+    
+    static func deleteTask(_ task: Task) {
+        try! realm.write {
+            realm.delete(task)
+        }
+    }
+    
+    static func editTask(_ task: Task, newTask: String, newNote: String? = nil) {
+        try! realm.write {
+            task.name = newTask
+            if let newNote = newNote {
+                task.note = newNote
+            }
+        }
+    }
+    
+    static func makeDone(_ task: Task) {
+        try! realm.write {
+            task.isComplete.toggle()
         }
     }
     

@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftUI
 
 class TasksListTableViewController: UITableViewController {
     
@@ -16,17 +17,13 @@ class TasksListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tasksLists = realm.objects(TasksList.self)
-        
+        navigationItem.leftBarButtonItem = editButtonItem
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-    }
-    
-    @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
-        
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -68,10 +65,17 @@ class TasksListTableViewController: UITableViewController {
                 tableView.reloadRows(at: [indexPath], with: .automatic)
             }
         }
+        editAction.backgroundColor = .orange
         
-        let deleteSwipeAction = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        let doneAction = UIContextualAction(style: .normal, title: "Done") { _, _, _ in
+            StorageManager.makeAllDone(currentList)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        doneAction.backgroundColor = .green
         
-        return deleteSwipeAction
+        let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction, doneAction, editAction])
+        
+        return swipeAction
     }
     
     

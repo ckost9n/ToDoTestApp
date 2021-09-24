@@ -30,6 +30,16 @@ class TasksListTableViewController: UITableViewController {
         alertForAddAndUpdateList()
     }
     
+    @IBAction func sortingList(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            tasksLists = tasksLists.sorted(byKeyPath: "name")
+        } else {
+            tasksLists = tasksLists.sorted(byKeyPath: "date")
+        }
+        
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

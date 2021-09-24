@@ -22,6 +22,9 @@
                                 <segment title="First"/>
                                 <segment title="Second"/>
                             </segments>
+                            <connections>
+                                <action selector="sortingList:" destination="vkv-dO-pTN" eventType="valueChanged" id="hfx-41-PFO"/>
+                            </connections>
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tasksListCell" textLabel="hnY-If-Bc0" detailTextLabel="nvj-6n-ABK" style="IBUITableViewCellStyleValue1" id="1ke-Wi-ZMe">

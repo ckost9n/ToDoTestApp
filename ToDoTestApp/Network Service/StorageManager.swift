@@ -27,6 +27,13 @@ class StorageManager {
         }
     }
     
+    static func editList(_ tasksList: TasksList, newListName: String) {
+        try! realm.write {
+            tasksList.name = newListName
+        }
+        
+    }
+    
     // MARK: - Tasks Method
     
     static func saveTask(_ tasksList: TasksList, task: Task) {

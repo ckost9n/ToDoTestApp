@@ -52,8 +52,7 @@ class TasksListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tasksListCell", for: indexPath)
 
         let tasksList = tasksLists[indexPath.row]
-        cell.textLabel?.text = tasksList.name
-        cell.detailTextLabel?.text = "\(tasksList.tasks.count)"
+        cell.configure(with: tasksList)
 
         return cell
     }

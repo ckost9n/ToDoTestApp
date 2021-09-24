@@ -17,6 +17,7 @@
 		3C23699926FC68D10050BF3C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23699826FC68D10050BF3C /* Task.swift */; };
 		3C2369A026FC7B170050BF3C /* TasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23699F26FC7B170050BF3C /* TasksList.swift */; };
 		3C2369A226FC7EE70050BF3C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2369A126FC7EE70050BF3C /* StorageManager.swift */; };
+		3C2369A426FE00790050BF3C /* Extantion + UITavleVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2369A326FE00790050BF3C /* Extantion + UITavleVIewCell.swift */; };
 		5B763AACA4737CFD9431444A /* Pods_ToDoTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65BA4DB42A86F35B25EB064 /* Pods_ToDoTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		3C23699826FC68D10050BF3C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3C23699F26FC7B170050BF3C /* TasksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksList.swift; sourceTree = "<group>"; };
 		3C2369A126FC7EE70050BF3C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		3C2369A326FE00790050BF3C /* Extantion + UITavleVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extantion + UITavleVIewCell.swift"; sourceTree = "<group>"; };
 		BB4B0AC2C8CC9CD4BEE658C4 /* Pods-ToDoTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoTestApp.release.xcconfig"; path = "Target Support Files/Pods-ToDoTestApp/Pods-ToDoTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		C65BA4DB42A86F35B25EB064 /* Pods_ToDoTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				3C23697C26FB6C920050BF3C /* Main.storyboard */,
+				3C2369A326FE00790050BF3C /* Extantion + UITavleVIewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				3C2369A026FC7B170050BF3C /* TasksList.swift in Sources */,
 				3C23699226FB7D4F0050BF3C /* TasksTableViewController.swift in Sources */,
+				3C2369A426FE00790050BF3C /* Extantion + UITavleVIewCell.swift in Sources */,
 				3C23697726FB6C920050BF3C /* AppDelegate.swift in Sources */,
 				3C2369A226FC7EE70050BF3C /* StorageManager.swift in Sources */,
 				3C23699926FC68D10050BF3C /* Task.swift in Sources */,

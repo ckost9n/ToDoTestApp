@@ -47,7 +47,6 @@ class TasksListTableViewController: UITableViewController {
         return tasksLists.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tasksListCell", for: indexPath)
 
